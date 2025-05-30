@@ -362,10 +362,7 @@ const App = () => {
   ];
 
   // Combine all questions into a single array
-  // CORREÇÃO: Use useMemo para memorizar allQuestions
-  const allQuestions = useMemo(() => {
-    return [...originalObjectiveQuestions, ...originalDiscursiveQuestions];
-  }, []); 
+  const allQuestions = [...originalObjectiveQuestions, ...originalDiscursiveQuestions];
 
   // State for shuffled questions
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
@@ -373,7 +370,7 @@ const App = () => {
   // Shuffle questions on initial load and when "Tentar Novamente" is clicked
   useEffect(() => {
     setShuffledQuestions(shuffleArray([...allQuestions]));
-  }, [allQuestions]); // Dependência correta para allQuestions
+  }, []); // Empty dependency array means this runs once on component mount
 
   // Handler for question changes (both objective and discursive)
   const handleChange = (questionId, value) => {
@@ -633,7 +630,7 @@ const App = () => {
       </div>
 
       {/* Tailwind CSS import */}
-      <script src="https://cdn.tailwindcss.com"></script>
+      {/* REMOVIDO: <script src="https://cdn.tailwindcss.com"></script> */}
       {/* MathJax for rendering LaTeX equations */}
       <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </div>
