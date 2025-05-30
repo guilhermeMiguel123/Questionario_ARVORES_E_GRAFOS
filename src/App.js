@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react'; // Adicione useMemo aqui
 
 // Main App component
 const App = () => {
@@ -362,7 +362,10 @@ const App = () => {
   ];
 
   // Combine all questions into a single array
-  const allQuestions = [...originalObjectiveQuestions, ...originalDiscursiveQuestions];
+  // CORREÇÃO: Use useMemo para memorizar allQuestions
+  const allQuestions = useMemo(() => {
+    return [...originalObjectiveQuestions, ...originalDiscursiveQuestions];
+  }, []); 
 
   // State for shuffled questions
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
@@ -370,7 +373,7 @@ const App = () => {
   // Shuffle questions on initial load and when "Tentar Novamente" is clicked
   useEffect(() => {
     setShuffledQuestions(shuffleArray([...allQuestions]));
-  }, []); // Empty dependency array means this runs once on mount
+  }, [allQuestions]); // Dependência correta para allQuestions
 
   // Handler for question changes (both objective and discursive)
   const handleChange = (questionId, value) => {
