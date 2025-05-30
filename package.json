@@ -14,12 +14,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-     "start": "react-scripts start",
-  "build": "cross-env PUBLIC_URL=http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS react-scripts build", 
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "start": "react-scripts start",
+    "build": "cross-env PUBLIC_URL=http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +40,9 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "autoprefixer": "^10.4.21",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^3.4.17"
   }
 }

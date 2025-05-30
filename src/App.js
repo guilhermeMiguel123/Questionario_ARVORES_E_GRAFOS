@@ -413,7 +413,7 @@ const App = () => {
       const prompt = `Para a seguinte pergunta, forneça uma dica concisa e útil, sem revelar a resposta direta. A dica deve guiar o usuário para o conceito ou abordagem correta. Pergunta: ${questionText}`;
       chatHistory.push({ role: "user", parts: [{ text: prompt }] });
       const payload = { contents: chatHistory };
-      const apiKey = ""; // Canvas will provide this at runtime
+      const apiKey = "AIzaSyCmKpCFKbvwDDxdgqNwIf7SPcXj-mI7-ew"; 
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
       const response = await fetch(apiUrl, {
@@ -460,7 +460,7 @@ const App = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800'} p-4 sm:p-8 font-inter transition-colors duration-300`}>
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800'} p-4 sm:p-8 font-inter transition-colors duration-150`}>
       {/* Header section */}
       <header className="mb-8 text-center relative">
         <h1 className={`text-4xl font-extrabold ${isDarkMode ? 'text-indigo-400' : 'text-indigo-800'} mb-2`}>Questionário de Revisão</h1>
