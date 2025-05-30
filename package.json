@@ -2,7 +2,7 @@
   "name": "nome-do-seu-questionario",
   "version": "0.1.0",
   "private": true,
-"homepage": "https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS",
+  "homepage": "https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -14,8 +14,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "start": "react-scripts start",
-  "build": "PUBLIC_URL=http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS react-scripts build", 
+     "start": "react-scripts start",
+  "build": "cross-env PUBLIC_URL=http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS react-scripts build", 
   "test": "react-scripts test",
   "eject": "react-scripts eject",
   "predeploy": "npm run build",
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
