@@ -2,7 +2,7 @@
   "name": "nome-do-seu-questionario",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/guilhermeMiguel123",
+"homepage": "https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
