@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env PUBLIC_URL=http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS react-scripts build",
+    "build": "cross-env PUBLIC_URL=https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
