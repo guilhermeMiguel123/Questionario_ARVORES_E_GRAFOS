@@ -1,49 +1,48 @@
-import React, { useState, useEffect, useMemo } from 'react'; // Adicione useMemo aqui
+import React, { useState, useEffect, useMemo } from 'react'; 
 
-// Main App component
 const App = () => {
-  // State to store user's answers
+
   const [answers, setAnswers] = useState({});
-  // State to control whether answers are submitted and displayed
+
   const [submitted, setSubmitted] = useState(false);
-  // State to store the calculated score
+  
   const [score, setScore] = useState(0);
-  // State to manage hint visibility and content for each question
+
   const [hintStates, setHintStates] = useState({});
-  // State for dark mode toggle, initialized from localStorage
+
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedMode = localStorage.getItem('darkMode');
     return savedMode === 'true' ? true : false;
   });
 
-  // Effect to apply dark mode class to body and save preference
+  
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
-      document.body.style.backgroundColor = '#1a202c'; // Dark background for body
+      document.body.style.backgroundColor = '#1a202c'; 
     } else {
       document.documentElement.classList.remove('dark');
-      document.body.style.backgroundColor = ''; // Reset to default
+      document.body.style.backgroundColor = ''; 
     }
     localStorage.setItem('darkMode', isDarkMode);
   }, [isDarkMode]);
 
-  // Helper function to shuffle an array
+  
   const shuffleArray = (array) => {
     let currentIndex = array.length, randomIndex;
-    // While there remain elements to shuffle.
+    
     while (currentIndex !== 0) {
-      // Pick a remaining element.
+
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-      // And swap it with the current element.
+      
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
     return array;
   };
 
-  // Original array of objective questions (constant)
+  
   const originalObjectiveQuestions = [
     {
       id: 'q1',
@@ -257,7 +256,7 @@ const App = () => {
     },
   ];
 
-  // Original array of discursive questions (constant)
+  
   const originalDiscursiveQuestions = [
     {
       id: 'q31',
@@ -360,19 +359,18 @@ const App = () => {
       type: 'discursive'
     },
   ];
-
-  // Combine all questions into a single array
+  
   const allQuestions = [...originalObjectiveQuestions, ...originalDiscursiveQuestions];
 
-  // State for shuffled questions
+  
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
 
-  // Shuffle questions on initial load and when "Tentar Novamente" is clicked
+  
   useEffect(() => {
     setShuffledQuestions(shuffleArray([...allQuestions]));
-  }, []); // Empty dependency array means this runs once on component mount
+  }, []); 
 
-  // Handler for question changes (both objective and discursive)
+  
   const handleChange = (questionId, value) => {
     setAnswers(prevAnswers => ({
       ...prevAnswers,
@@ -380,10 +378,10 @@ const App = () => {
     }));
   };
 
-  // Handler for form submission
+  
   const handleSubmit = () => {
     let currentScore = 0;
-    originalObjectiveQuestions.forEach(q => { // Use original objective questions to check answers
+    originalObjectiveQuestions.forEach(q => { 
       if (answers[q.id] === q.correctAnswer) {
         currentScore += 2;
       }
@@ -392,16 +390,16 @@ const App = () => {
     setSubmitted(true);
   };
 
-  // Function to render MathJax equations
+  
   const renderMathJax = (text) => {
     if (typeof window !== 'undefined' && window.MathJax) {
-      // Ensure MathJax processes the new content
+      
       setTimeout(() => window.MathJax.typesetPromise(), 0);
     }
     return <span dangerouslySetInnerHTML={{ __html: text }} />;
   };
 
-  // Function to fetch hint from Gemini API
+  
   const fetchHint = async (questionId, questionText) => {
     setHintStates(prev => ({
       ...prev,
@@ -446,7 +444,7 @@ const App = () => {
     }
   };
 
-  // Function to close hint
+  
   const closeHint = (questionId) => {
     setHintStates(prev => ({
       ...prev,
@@ -460,7 +458,7 @@ const App = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800'} p-4 sm:p-8 font-inter transition-colors duration-150`}>
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800'} p-4 sm:p-8 font-inter transition-colors duration-50`}>
       {/* Header section */}
       <header className="mb-8 text-center relative">
         <h1 className={`text-4xl font-extrabold ${isDarkMode ? 'text-indigo-400' : 'text-indigo-800'} mb-2`}>Questionário de Revisão</h1>
@@ -469,7 +467,7 @@ const App = () => {
         {/* Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className={`absolute top-0 right-0 p-2 rounded-full ${isDarkMode ? 'bg-gray-700 text-yellow-300' : 'bg-indigo-100 text-indigo-600'} shadow-md hover:scale-110 transition-transform duration-200`}
+          className={`absolute top-0 right-0 p-2 rounded-full ${isDarkMode ? 'bg-gray-700 text-yellow-300' : 'bg-indigo-100 text-indigo-600'} shadow-md hover:scale-110 transition-transform duration-50`}
           aria-label="Toggle dark mode"
         >
           {isDarkMode ? (
