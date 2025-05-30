@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/static/css/main.91a74c41.css",
-    "main.js": "http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/static/js/main.c9b398b3.js",
-    "index.html": "http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/index.html",
-    "main.91a74c41.css.map": "http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/static/css/main.91a74c41.css.map",
-    "main.c9b398b3.js.map": "http://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/static/js/main.c9b398b3.js.map"
+    "main.css": "https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/static/css/main.91a74c41.css",
+    "main.js": "https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/static/js/main.c9b398b3.js",
+    "index.html": "https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/index.html",
+    "main.91a74c41.css.map": "https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/static/css/main.91a74c41.css.map",
+    "main.c9b398b3.js.map": "https://guilhermeMiguel123.github.io/Questionario_ARVORES_E_GRAFOS/static/js/main.c9b398b3.js.map"
   },
   "entrypoints": [
     "static/css/main.91a74c41.css",
